@@ -14,7 +14,7 @@ const AddPanier = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/api/paniers', panier)
+        axios.post('http://localhost:3005/api/paniers', panier)
             .then(response => {
                 alert('Panier ajouté avec succès');
             })

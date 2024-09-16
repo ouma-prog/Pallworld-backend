@@ -5,7 +5,7 @@ const UsersList = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/users') // Assure-toi que l'URL correspond à ton API
+        axios.get('http://localhost:3005/api/users') // Assure-toi que l'URL correspond à ton API
             .then(response => {
                 setUsers(response.data); // Mettre à jour l'état avec la liste des utilisateurs
             })

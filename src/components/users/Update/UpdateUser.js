@@ -13,7 +13,7 @@ const UpdateUser = () => {
             return;
         }
 
-        axios.put(`http://localhost:3001/api/users/${id}`, { name, email })
+        axios.put(`http://localhost:3005/api/users/${id}`, { name, email })
             .then(response => {
                 alert('Utilisateur mis à jour avec succès');
             })

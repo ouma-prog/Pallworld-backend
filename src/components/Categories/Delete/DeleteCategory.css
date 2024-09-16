@@ -1,0 +1,66 @@
+/* Conteneur principal de la page */
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Titre principal */
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Liste des catégories */
+  .category-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Éléments de la liste des catégories */
+  .category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Message d'erreur */
+  .error-message {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  /* Message de succès */
+  .success-message {
+    color: #2ecc71;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  /* Bouton de suppression */
+  .delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+  

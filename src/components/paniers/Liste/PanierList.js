@@ -5,7 +5,7 @@ const PanierList = () => {
     const [paniers, setPaniers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/paniers')
+        axios.get('http://localhost:3005/api/paniers')
             .then(response => {
                 setPaniers(response.data);
             })

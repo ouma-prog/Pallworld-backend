@@ -1,72 +1,48 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Import des composants
-import AddCategory from './components/Categories/AddCategory';
-import UpdateCategory from './components/Categories/UpdateCategory';
-import CategoriesList from './components/Categories/ListCategories';
+//categories
+import CreateCategory from './components/Categories/Create/CreateCategory';
+import UpdateCategory from './components/Categories/Update/UpdateCategory';
+import ListCategory from './components/Categories/Liste/ListCategory';
+import DeleteCategory from './components/Categories/Delete/deleteCategory'; 
+//produits
+import ProductList from './components/products/Liste/ProductList';
+import AddProduct from './components/products/Add/AddProduct';
+import UpdateProduct from './components/products/Update/UpdateProduct';
+import Header from './components/Header/header'; 
 
-import AddPanier from './components/paniers/AddPanier';
-import PanierList from './components/paniers/PanierList';
-import UpdatePanier from './components/paniers/UpdatePanier';
+//Generate image 
+import CreateGeneratedImage from './components/GenerateImmage/Add/CreateGeneratedImage';
+import DeleteGeneratedImage from './components/GenerateImmage/Delete/DeleteGeneratedImage';
+import ListGeneratedImagesByUserId from './components/GenerateImmage/Liste/listById';
 
-import AddProduct from './components/products/AddProduct';
-import UpdateProduct from './components/products/UpdateProduct';
-import ProductList from './components/products/ProductList';
-import SearchProducts from './components/products/SearchProducts';
 
-import UsersList from './components/users/UsersList';
-import AddUser from './components/users/AddUser';
-import UpdateUser from './components/users/UpdateUser';
+function App() {
+  return (
+    <Router>
+      <Header />
 
-const App = () => {
-    return (
-        <Router>
-            <Routes>
-                {/* Gestion des catégories */}
-                <Route path="/category" element={
-                    <div>
-                        <h1>Gestion des Catégories</h1>
-                        <AddCategory />
-                        <UpdateCategory />
-                        <CategoriesList />
-                    </div>
-                }/>
+      <Routes>
+        {/* Category Routes */}
+        <Route path="/categories" element={<ListCategory />} />
+        <Route path="/categories/add" element={<CreateCategory />} />
+        <Route path="/categories/update/:id" element={<UpdateCategory />} />
+        <Route path="/categories/delete" element={<DeleteCategory />} /> 
 
-                {/* Gestion des paniers */}
-                <Route path="/panier" element={
-                    <div>
-                        <h1>Gestion des Paniers</h1>
-                        <AddPanier />
-                        <UpdatePanier />
-                        <PanierList />
-                    </div>
-                }/>
+        {/* Product Routes */}
+        <Route path="/produit" element={<ProductList />} />
+        <Route path="/produit/add" element={<AddProduct />} />
+        <Route path="/produit/update/:id" element={<UpdateProduct />} />
 
-                {/* Gestion des produits */}
-                <Route path="/product" element={
-                    <div>
-                        <h1>Gestion des Produits</h1>
-                        <SearchProducts />  
-                        <AddProduct />      
-                        <UpdateProduct />   
-                        <ProductList />    
-                    </div>
-                }/>
+         {/* Generate images Routes */}
+         <Route path="/generateimage" element={<CreateGeneratedImage />} />
+         <Route path="generateimage/delete" element={<DeleteGeneratedImage />} />
+         <Route path="/generateimage/:userId" element={<ListGeneratedImagesByUserId />} />
 
-                {/* Gestion des utilisateurs */}
-                <Route path="/users" element={
-                    <div>
-                        <h1>Gestion des Utilisateurs</h1>
-                        <UsersList />       
-                        <AddUser />         
-                        <UpdateUser />     
-                    </div>
-                }/>
-            </Routes>
-        </Router>
-    );
-};
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;

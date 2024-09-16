@@ -1,0 +1,76 @@
+/* Page container */
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Page title */
+  .page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Search form */
+  .search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #48bb78;
+    border-radius: 8px;
+    margin-right: 10px;
+    width: 60%;
+  }
+  
+  .search-button, .reset-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .reset-button {
+    background-color: #e53e3e;
+    margin-left: 10px;
+  }
+  
+  .search-button:hover, .reset-button:hover {
+    background-color: #38a169;
+  }
+  
+  /* Error message */
+  .error-message {
+    color: #e53e3e;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Categories list */
+  .category-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+  }
+  

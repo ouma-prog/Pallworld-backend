@@ -1,0 +1,96 @@
+/* Container for the page */
+.page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .page-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form container */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Label styling */
+  .form-container label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Input fields */
+  .form-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Button styling */
+  .form-container button {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-container button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Error and success message styling */
+  .error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .success-message {
+    color: #2ecc71;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .page-container {
+      padding: 15px;
+    }
+  
+    .form-container label {
+      font-size: 1rem;
+    }
+  
+    .form-container input {
+      font-size: 0.9rem;
+    }
+  
+    .form-container button {
+      font-size: 0.9rem;
+    }
+  
+    .page-container h2 {
+      font-size: 1.8rem;
+    }
+  }
+  

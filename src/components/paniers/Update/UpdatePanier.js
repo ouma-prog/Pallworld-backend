@@ -7,7 +7,7 @@ const UpdatePanier = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:3001/api/paniers/${panierId}`, { total })
+        axios.put(`http://localhost:3005/api/paniers/${panierId}`, { total })
             .then(response => {
                 alert('Panier mis à jour avec succès');
             })
