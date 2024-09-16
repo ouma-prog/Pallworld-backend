@@ -1,48 +1,76 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';  // Importer useNavigate
+import './Panier.css';
 
-const AddPanier = () => {
-    const [panier, setPanier] = useState({
-        userId: '',
-        products: [],
-        total: 0,
-    });
+const Panier = () => {
+  const [newPanier, setNewPanier] = useState({
+    totalPrice: '',
+    totalQuantity: '',
+    tabProducts: '',
+  });
 
-    const handleChange = (e) => {
-        setPanier({ ...panier, [e.target.name]: e.target.value });
-    };
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('http://localhost:3005/api/paniers', panier)
-            .then(response => {
-                alert('Panier ajouté avec succès');
-            })
-            .catch(error => {
-                console.error('Erreur lors de l\'ajout du panier:', error);
-            });
-    };
+  const navigate = useNavigate();  // Initialiser useNavigate pour la redirection
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <h2>Ajouter un Panier</h2>
-            <input
-                type="text"
-                name="userId"
-                placeholder="ID de l'utilisateur"
-                value={panier.userId}
-                onChange={handleChange}
-            />
-            <input
-                type="number"
-                name="total"
-                placeholder="Total du panier"
-                value={panier.total}
-                onChange={handleChange}
-            />
-            <button type="submit">Ajouter</button>
-        </form>
-    );
+  // Fonction pour créer un nouveau panier
+  const createPanier = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    try {
+      const response = await fetch('http://localhost:3005/api/paniers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newPanier),
+      });
+      if (response.ok) {
+        // Rediriger vers la page liste des paniers après création réussie
+        navigate('/paniers/list');  // Redirection vers la page de la liste des paniers
+      } else {
+        setError('Erreur lors de la création du panier.');
+      }
+    } catch (err) {
+      setError('Erreur lors de la création du panier.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="panier-container">
+      {error && <p className="error-message">{error}</p>}
+      {loading && <p>Chargement...</p>}
+
+      <h2>Créer un nouveau panier</h2>
+      <form className="panier-form" onSubmit={createPanier}>
+        <input
+          type="number"
+          placeholder="Prix total"
+          value={newPanier.totalPrice}
+          onChange={(e) => setNewPanier({ ...newPanier, totalPrice: e.target.value })}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Quantité totale"
+          value={newPanier.totalQuantity}
+          onChange={(e) => setNewPanier({ ...newPanier, totalQuantity: e.target.value })}
+          required
+        />
+        <textarea
+          placeholder="Produits (en JSON)"
+          value={newPanier.tabProducts}
+          onChange={(e) => setNewPanier({ ...newPanier, tabProducts: e.target.value })}
+          required
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? 'Création...' : 'Créer le panier'}
+        </button>
+      </form>
+    </div>
+  );
 };
 
-export default AddPanier;
+export default Panier;

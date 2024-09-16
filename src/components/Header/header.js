@@ -16,11 +16,16 @@ const Header = () => {
         {/* Navigation Links */}
         <nav className="nav-links">
           <Link to="/" className="nav-item">ACCUEIL</Link>
+          <Link to="/users" className="nav-item">Gestion Users </Link>
           <Link to="/categories" className="nav-item">Gestion Catégories</Link>
           <Link to="/produit" className="nav-item">Gestion Produits</Link>
-          <Link to="/paniers" className="nav-item">Gestion Paniers </Link>
           <Link to="/users" className="nav-item">Gestion Users </Link>
-          <Link to="/GenerateImage" className="nav-item">Generate Image </Link>
+          <Link to="/generateimage" className="nav-item">Generate Image </Link>
+          <Link to="/paniers" className="nav-item">Gestion Panier </Link>
+          <Link to="/tabproduct" className="nav-item">Tableau Produit</Link>
+          <Link to="/orders" className="nav-item">orders </Link>
+
+
         </nav>
 
         {/* Icons */}

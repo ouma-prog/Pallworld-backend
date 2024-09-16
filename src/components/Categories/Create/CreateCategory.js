@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './CreateCategory.css'; // Assurez-vous que ce fichier CSS est correctement importé
+import './CreateCategory.css'; 
 
 const CreateCategory = () => {
   const [categoryName, setCategoryName] = useState('');

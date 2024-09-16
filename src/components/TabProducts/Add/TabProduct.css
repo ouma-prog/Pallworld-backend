@@ -1,0 +1,73 @@
+/* Conteneur principal */
+.tabproduct-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* Titre de la page */
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #2d3748;
+  }
+  
+  /* Formulaire */
+  .tabproduct-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tabproduct-form label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .tabproduct-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #38a169;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Bouton d'ajout au panier */
+  button {
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #38a169;
+  }
+  
+  /* Messages d'erreur et de succès */
+  .error-message {
+    color: #e53e3e;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: #48bb78;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  

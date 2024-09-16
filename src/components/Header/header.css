@@ -1,63 +1,66 @@
-/* Header.css */
 .header {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 16px 0;
-  }
-  
-  .header-container {
+    text-align: center; /* Centrer le contenu */
+}
+
+.header-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 20px;
-  }
-  
-  .logo {
+    display: block; /* Changer flex à block pour centrer le logo */
+}
+
+.logo {
     display: flex;
+    justify-content: center; /* Centrer le logo */
     align-items: center;
-  }
-  
-  .logo img {
+}
+
+.logo img {
     height: 40px;
     margin-right: 10px;
-  }
-  
-  .logo span {
+}
+
+.logo span {
     font-weight: bold;
     font-size: 24px;
-  }
-  
-  .nav-links {
+}
+
+.nav-links {
     display: flex;
+    justify-content: center; /* Centrer les liens de navigation */
     gap: 20px;
-  }
-  
-  .nav-item {
+    margin-top: 20px; /* Espacement entre le logo et les liens */
+}
+
+.nav-item {
     text-decoration: none;
     color: #333;
     font-weight: 500;
     font-size: 16px;
-  }
-  
-  .nav-item:hover {
+}
+
+.nav-item:hover {
     color: #000;
-  }
-  
-  .icons {
+}
+
+.icons {
     display: flex;
+    justify-content: center; /* Centrer les icônes */
     align-items: center;
     gap: 20px;
-  }
-  
-  .icons i {
+    margin-top: 20px; /* Ajouter un espacement si nécessaire */
+}
+
+.icons i {
     font-size: 20px;
     color: #333;
     cursor: pointer;
-  }
-  
-  .icons .cart-badge {
+}
+
+.icons .cart-badge {
     position: absolute;
     background-color: red;
     color: white;
@@ -67,5 +70,4 @@
     border-radius: 50%;
     top: -8px;
     right: -8px;
-  }
-  
+}

@@ -1,76 +1,153 @@
 /* Page container */
 .page-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f3f4f6;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Page title */
-  .page-title {
-    font-size: 2rem;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative; /* Relative pour la position du bouton */
+}
+
+/* Page title */
+.page-title {
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
-    color: #333;
-  }
-  
-  /* Search form */
-  .search-form {
+    color: #2d3748;
+}
+
+/* Search form */
+.search-form {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-input {
-    padding: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    align-items: center; /* Aligne les boutons avec la barre de recherche */
+}
+
+.search-input {
+    padding: 8px;
     font-size: 1rem;
-    border: 2px solid #48bb78;
+    border: 2px solid #38a169;
     border-radius: 8px;
     margin-right: 10px;
-    width: 60%;
-  }
-  
-  .search-button, .reset-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #48bb78;
+    width: 70%; /* Largeur légèrement augmentée pour plus de visibilité */
+}
+
+/* Reduced button size and improved aesthetics */
+.search-button, .reset-button {
+    padding: 8px 14px; /* Réduction du padding des boutons */
+    font-size: 0.9rem; /* Taille de texte plus petite */
+    background-color: #38a169;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-  }
-  
-  .reset-button {
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Ajout de transition pour l'effet visuel */
+    min-width: 100px; /* Largeur minimum ajustée pour plus de compacité */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Ajout d'un léger effet d'ombre */
+}
+
+/* Styling for reset button */
+.reset-button {
     background-color: #e53e3e;
-    margin-left: 10px;
-  }
-  
-  .search-button:hover, .reset-button:hover {
-    background-color: #38a169;
-  }
-  
-  /* Error message */
-  .error-message {
+    margin-left: 10px; /* Légèrement espacé du bouton de recherche */
+}
+
+/* Hover effects for buttons */
+.search-button:hover, .reset-button:hover {
+    background-color: #2f855a;
+    transform: translateY(-2px); /* Légère remontée du bouton pour un effet d'interaction */
+}
+
+.reset-button:hover {
+    background-color: #c53030;
+}
+
+/* Error message */
+.error-message {
     color: #e53e3e;
     text-align: center;
     font-size: 1.2rem;
     margin-top: 10px;
-  }
-  
-  /* Categories list */
-  .category-list {
+}
+
+/* Categories list */
+.category-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .category-item {
-    padding: 15px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.category-item {
+    padding: 16px;
+    margin-bottom: 12px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #e2e8f0;
-  }
-  
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-id {
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.category-name {
+    font-size: 1.2rem;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+/* Bouton pour ajouter une catégorie */
+.add-category-button {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Positionné en haut à droite */
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.add-category-button:hover {
+    background-color: #38a169;
+}
+
+/* Texte qui apparaît lorsque l'on clique sur le bouton */
+.add-category-text {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Caché par défaut */
+}
+
+.add-category-text.show {
+    opacity: 1; /* Afficher lorsque la classe 'show' est ajoutée */
+}
